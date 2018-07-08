@@ -29,6 +29,10 @@ Add an entry to your crontab to run the script every few minutes.
 - Add this line: `*/5 * * * * /path/to/bee-focused.py`
 - Save and exit
 
+If you're using a browser other than Safari, Chrome, and Vivaldi, you'll also
+need to install the Focus extension. [Here's their documentation on how to do
+that.](https://heyfocus.com/docs/help/browser-extensions/)
+
 ## Information
 
 - [Beeminder API docs](http://api.beeminder.com)
