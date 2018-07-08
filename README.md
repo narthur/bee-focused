@@ -25,8 +25,9 @@ chmod +x bee-focused.py
 
 Add an entry to your crontab to run the script every few minutes.
 
+- Find the path to your local copy of Python 3: `which python3`
 - Open Crontab: `export VISUAL=nano; crontab -e`
-- Add this line: `*/5 * * * * /path/to/bee-focused.py`
+- Add this line: `*/5 * * * *  /path/to/python3 /path/to/bee-focused/bee-focused.py >>/path/to/bee-focused/cron.log 2>&1`
 - Save and exit
 
 If you're using a browser other than Safari, Chrome, and Vivaldi, you'll also

@@ -4,13 +4,19 @@ import json
 from pprint import pprint
 import urllib.request
 import os
+import datetime
 
-json_data = open("auth_token.json").read()
+print '----------'
+print datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+
+dir = os.path.dirname(os.path.abspath(__file__))
+
+json_data = open('%s/auth_token.json' % dir).read()
 data = json.loads(json_data)
 auth_token = data['auth_token']
 username = data['username']
 
-goals_json = open("goals.json").read()
+goals_json = open('%s/goals.json' % dir).read()
 goals = json.loads(goals_json)
 pprint(goals)
 

@@ -1,2 +1,3 @@
 auth_token.json
 goals.json
+*.log
