@@ -29,8 +29,6 @@ for goal in goals:
     print('%s: %d' % (goal, lane))
     lowestLane = lowestLane if lowestLane < lane else lane
 
-print('Lowest lane: %s' % lowestLane)
-
 if lowestLane < 0:
     print('Time to focus!')
     os.system("open focus://focus")
