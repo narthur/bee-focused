@@ -6,8 +6,8 @@ import urllib.request
 import os
 import datetime
 
-print '----------'
-print datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+print('----------')
+print(datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"))
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
