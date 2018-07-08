@@ -23,6 +23,8 @@ chmod +x app.py
 ./app.py
 ```
 
+Add an entry to your crontab to run the script every few minutes.
+
 ## Information
 
 - [Beeminder API docs](http://api.beeminder.com)
