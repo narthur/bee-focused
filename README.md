@@ -19,11 +19,15 @@ Copy `goals_example.json` to `goals.json` and edit to reflect which of your
 Beeminder goals you want to use to trigger focus time.
 
 ```bash
-chmod +x app.py
-./app.py
+chmod +x bee-focused.py
+./bee-focused.py
 ```
 
 Add an entry to your crontab to run the script every few minutes.
+
+- Open Crontab: `export VISUAL=nano; crontab -e`
+- Add this line: `*/5 * * * * /path/to/bee-focused.py`
+- Save and exit
 
 ## Information
 
