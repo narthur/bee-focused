@@ -7,6 +7,8 @@
 - Python 3 (On a Mac? `homebrew install python`)
 - [Beeminder](https://www.beeminder.com/home)
 - [Focus](https://heyfocus.com/)
+- [Focus browser extension](https://heyfocus.com/docs/help/browser-extensions/)
+  if you're using a browser other than Safari, Chrome, or Vivaldi
 
 ## Setup
 
@@ -30,9 +32,12 @@ Add an entry to your crontab to run the script every few minutes.
 - Add this line: `*/5 * * * *  /path/to/python3 /path/to/bee-focused/bee-focused.py >>/path/to/bee-focused/cron.log 2>&1`
 - Save and exit
 
-If you're using a browser other than Safari, Chrome, and Vivaldi, you'll also
-need to install the Focus extension. [Here's their documentation on how to do
-that.](https://heyfocus.com/docs/help/browser-extensions/)
+In order to allow you to enable Focus separately from this script, bee-focused
+never explicitly unfocuses. Instead, it starts 7-minute focus sessions and then
+lets the last one expire when you're caught up on your goals. For that reason,
+it's important that the script runs at least every seven minutes (I suggest
+every five) in order to insure that there isn't time between when one focus
+session expires and the next is initiated.
 
 ## Information
 

@@ -31,7 +31,6 @@ for goal in goals:
 
 if lowestLane < 0:
     print('Time to focus!')
-    os.system("open focus://focus")
+    os.system("open focus://focus?minutes=7")
 else:
-    print('Good job! Unfocusing...')
-    os.system("open focus://unfocus")
+    print('Good job! Focus session should expire in ~2 minutes.')
