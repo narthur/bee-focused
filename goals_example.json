@@ -1,5 +1,14 @@
 [
-  "worktime",
-  "contracting",
-  "wedding"
+  {
+    "name": "worktime",
+    "targetBufferDays": 3
+  },
+  {
+    "name": "contracting",
+    "targetBufferDays": 7
+  },
+  {
+    "name": "wedding",
+    "targetBufferDays": 7
+  }
 ]

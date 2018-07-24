@@ -1,5 +1,7 @@
 # bee-focused
 
+"The Taskmaster"
+
 ## Description
 
 ## Requirements
@@ -25,7 +27,7 @@ chmod +x bee-focused.py
 ./bee-focused.py
 ```
 
-Add an entry to your crontab to run the script every few minutes.
+Add an entry to your crontab to run the script every few minutes:
 
 - Find the path to your local copy of Python 3: `which python3`
 - Open Crontab: `export VISUAL=nano; crontab -e`

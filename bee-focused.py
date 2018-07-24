@@ -20,16 +20,25 @@ goals_json = open('%s/goals.json' % dir).read()
 goals = json.loads(goals_json)
 pprint(goals)
 
-lowestLane = 0
+beeFocused = False
 for goal in goals:
-    url = 'https://www.beeminder.com/api/v1/users/%s/goals/%s.json?auth_token=%s' % (username, goal, auth_token)
+    goalName = goal["name"]
+    targetBufferDays = goal["targetBufferDays"]
+    url = 'https://www.beeminder.com/api/v1/users/%s/goals/%s.json?auth_token=%s' % (username, goalName, auth_token)
     result = urllib.request.urlopen(url).read()
     result_data = json.loads(result);
     lane = result_data['lane']
-    print('%s: %d' % (goal, lane))
-    lowestLane = lowestLane if lowestLane < lane else lane
+    loseTime = result_data['losedate']
+    loseDate = datetime.datetime.fromtimestamp(loseTime)
+    loseDateString = loseDate.strftime("%I:%M%p on %B %d, %Y")
+    loseDateDelta = loseDate - datetime.datetime.now()
+    bufferDays = loseDateDelta.days
+    print("%s: You're going to lose in %d days (%s)" % (goalName, bufferDays, loseDateString))
+    if bufferDays < targetBufferDays:
+        print("%d days is less than %d days. Get focused!" % (bufferDays, targetBufferDays))
+        beeFocused = True
 
-if lowestLane < 0:
+if beeFocused:
     print('Time to focus!')
     os.system("open focus://focus?minutes=7")
 else:
